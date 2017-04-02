@@ -1,4 +1,10 @@
-
+/*
+Team Name: CollegeTrip
+Team Members: Jesse Sit, Lisa Eng
+APCS2 pd3
+lab2 -- All Hands on Deque!
+2017-4-2
+*/
 public class DLLDeque<T> implements Deque<T> {
 
     private DLLNode<T> _front, _end;
