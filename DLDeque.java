@@ -52,7 +52,7 @@ public class DLDeque<T> implements Dequeue {
 
     //returns element at front of deque. Returns null if deque is empty
     public T peekFirst(){
-	return _front.getCargo();
+	return _front.getValue();
     } 
 
     //returns element at end of deque. Returns null if deque is empty
