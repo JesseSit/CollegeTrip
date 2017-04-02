@@ -7,20 +7,20 @@
 ## Method Selections
   
   
-  ## addFirst()
+  ### addFirst()
   addFirst() would be useful for the user to add to the front of the deque. (similar to the push() method)
   
-  ## addLast()
+  ### addLast()
   addLast() would be useful for the user to add to the end of the deque. (similar to the add() method)
   
-  ## pollFirst()
+  ### pollFirst()
   pollFirst() would be useful for the user to take out the element from the front of the deque. (similar to the remove() and removeFirst() method)
   
-  ## pollLast()
+  ### pollLast()
   pollLast() would be useful for the user to take out the element from the end of the deque. (similar to the pop() and removeLast() method)
   
-  ## peekFirst()
+  ### peekFirst()
   peekFirst() would be useful for the user to retrieve the element from the front of the deque. (similar to the peek() and getFirst() method)
   
-  ## peekLast()
+  ### peekLast()
   peekLast() would be useful for the user to retrieve the element from the end of the deque. (similar to the peek() and getLast() method)
