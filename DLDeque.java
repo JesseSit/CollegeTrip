@@ -38,7 +38,7 @@ public class DLDeque<T> implements Dequeue {
 	    return null;
 	}
 	else{
-	    T retT = _front.getCargo();
+	    T retT = _front.getVal();
 	    _front = _front.getNext();
 	    _size--;
 	    return retT;
