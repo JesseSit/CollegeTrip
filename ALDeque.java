@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class ALDeque<T> implements Dequeue<T>{
 
-    private ArratList<T> dequeue;
+    private ArrayList<T> dequeue;
     
     public ALDequeue<T> {
 	dequeue = new ArrayList<T>();
