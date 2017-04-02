@@ -1,10 +1,10 @@
 # CollegeTrip
 
-Using a double linked Node
+##Using a double linked Node
   
   We decided to use a double linked node because certain methods such as addFirst(), addLast(), pollFirst(), and pollLast() would have a run time of O(1). If we had used ArrayList, many of the methods listed above could have been written using many of the default methods in the ArrayList package, however, the run time would have been O(n). Using an ArrayList based architecture has a run time of O(n) because methods like addFirst() and pollFirst() would cause the array to be shifted one position.
   
-  Method Selections
+##Method Selections
   
   
   addFirst()
