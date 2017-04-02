@@ -65,7 +65,7 @@ public class DLDeque<T> implements Dequeue {
 	return _size;
     }
 
-    public booleand isEmpty(){
+    public boolean isEmpty(){
 	return _size == 0;
     }
 }
