@@ -1,7 +1,5 @@
 public interface Deque<T>{
     
-    public int size(); //returns size of deque;
-    
     public void addFirst(T val); //add element to front of deque;
 
     public void addLast(T val); //add element to end of deque;
@@ -12,7 +10,7 @@ public interface Deque<T>{
 
     public T peekFirst(); //returns element at front of deque. Returns null if deque is empty;
 
-    public T peekFirst(); //returns element at end of deque. Returns null if deque is empty;
+    public T peekLast(); //returns element at end of deque. Returns null if deque is empty;
 
 }
     

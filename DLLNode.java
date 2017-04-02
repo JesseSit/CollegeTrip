@@ -3,23 +3,28 @@
  * Implements a node, for use in lists and other container classes.
  *****************************************************/
 
-public class LLNode<T> {
+public class DLLNode<T> {
 
     private T _cargo;    //cargo may only be of type T
-    private LLNode<T> _nextNode; //pointer to next LLNode
+    private DLLNode<T> _nextNode; //pointer to next DLNode
+    private DLLNode<T> _prevNode; //pointer to prev DLNode
 
 
     // constructor -- initializes instance vars
-    public LLNode( T value, LLNode<T> next ) {
+    public DLLNode( DLLNode<T> prev, T value, DLLNode<T> next ) {
+	_prevNode = prev;
 	_cargo = value;
 	_nextNode = next;
     }
 
 
     //--------------v  ACCESSORS  v--------------
+    public DLLNode<T> getPrev() { return _prevNode; }
+    
     public T getValue() { return _cargo; }
 
-    public LLNode<T> getNext() { return _nextNode; }
+    public DLLNode<T> getNext() { return _nextNode; }
+
     //--------------^  ACCESSORS  ^--------------
 
 
@@ -30,9 +35,15 @@ public class LLNode<T> {
 	return foo;
     }
 
-    public LLNode<T> setNext( LLNode<T> newNext ) {
-	LLNode<T> foo = getNext();
+    public DLLNode<T> setNext( DLLNode<T> newNext ) {
+	DLLNode<T> foo = getNext();
 	_nextNode = newNext;
+	return foo;
+    }
+    
+    public DLLNode<T> setPrev( DLLNode<T> newPrev ) {
+	DLLNode<T> foo = getPrev();
+	_prevNode = newPrev;
 	return foo;
     }
     //--------------^  MUTATORS  ^--------------
