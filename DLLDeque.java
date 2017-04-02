@@ -96,6 +96,7 @@ public class DLLDeque<T> implements Deque<T> {
 	return retStr;
     }
     public static void main(String[] args){
+	/*
 	DLLDeque<String> Lafayette = new DLLDeque<String>();
 
 	System.out.println(Lafayette.isEmpty());
@@ -106,7 +107,8 @@ public class DLLDeque<T> implements Deque<T> {
 	System.out.println(Lafayette);
 	System.out.println(Lafayette.peekFirst());	
 	System.out.println(Lafayette.pollFirst());
-	System.out.println(Lafayette.pollLast());
+	System.out.println(Lafayette.pollFirst());
 	System.out.println(Lafayette);
+	*/
     }
 }
