@@ -24,3 +24,9 @@
   
   ### peekLast()
   peekLast() would be useful for the user to retrieve the element from the end of the deque. (similar to the peek() and getLast() method)
+  
+  ### removeFirstOccurance()
+  removeFirstOccurrance() would be useful for the user to remove the first occurrance of an element. returns true if the element was successfully removed, false otherwise.
+  
+  ### removeLastOccurrance()
+  removeLastOccurrance() would be useful for the user to remove the last occurrance of an element. returns true if the element was successfully removed, false otherwise.
