@@ -85,7 +85,39 @@ public class DLLDeque<T> implements Deque<T> {
 	    return null;
 	return _end.getValue();
     }
-    
+
+    //removes the first occurrence of val and returns true if an element was remove
+    public boolean removeFirstOccurrence(T val){
+        DLLNode node = new DLLNode(null, _front.getValue(), null);
+	while(_front.getValue() != val){
+	    node.setNext(_front.getNext());
+	    _front = _front.getNext();
+	    if (isEmpty()){
+		_front = node;
+		return false;
+	    }
+	}
+        node.setNext(_front.getNext());
+	_front = node;
+	return true;
+    }
+
+    //removes the last occurrence of val and returns true if an element was removed
+    public boolean removeLastOccurrence(T val){
+	DLLNode node = new DLLNode(null, _end.getValue(), null);
+	while(_end.getValue() != val){
+	    node.setPrev(_end.getPrev());
+	    _end = _end.getPrev();
+	    if (isEmpty()){
+		_end = node;
+		return false;
+	    }
+	}
+	node.setPrev(_end.getPrev());
+	_end = node;
+	return true;
+    }
+	    
     //returns emptiness of deque;
     public boolean isEmpty(){
 	return _size == 0;
@@ -102,19 +134,22 @@ public class DLLDeque<T> implements Deque<T> {
 	return retStr;
     }
     public static void main(String[] args){
-	/*
+	
 	DLLDeque<String> Lafayette = new DLLDeque<String>();
 
 	System.out.println(Lafayette.isEmpty());
 	System.out.println(Lafayette.peekFirst());
 	System.out.println(Lafayette.pollFirst());
 	Lafayette.addFirst("Jesse");
+	Lafayette.addLast("Sit");
 	Lafayette.addLast("Lisa");
+	Lafayette.addLast("Sit");
 	System.out.println(Lafayette);
+	System.out.println(Lafayette.removeFirstOccurrence("Sit"));
 	System.out.println(Lafayette.peekFirst());	
 	System.out.println(Lafayette.pollFirst());
 	System.out.println(Lafayette.pollFirst());
 	System.out.println(Lafayette);
-	*/
+	
     }
 }

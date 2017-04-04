@@ -12,8 +12,8 @@ public interface Deque<T>{
 
     public T peekLast(); //returns element at end of deque. Returns null if deque is empty;
 
-    //public boolean removeLastOccurrence(T val); //removes the last occurrence of val and returns true if an element was removed;
+    public boolean removeFirstOccurrence(T val); //removes the first occurrence of val and returns true if an element was removed;
 
-    //public boolean removeFirstOccurrence(T val); //removes the first occurrence of val and returns true if an element was removed;
+    public boolean removeLastOccurrence(T val); //removes the last occurrence of val and returns true if an element was removed;
 }
     
