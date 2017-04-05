@@ -18,12 +18,13 @@ public class DLLDeque<T> implements Deque<T> {
  
     //add element to front of deque
     public void addFirst(T val){
-	DLLNode node = new DLLNode<T>(null, val, null);
 	if (isEmpty()){
+	    DLLNode node = new DLLNode<T>(null, val, null);
 	    _front = node;
 	    _end = node;
 	}
 	else{
+	    DLLNode node = new DLLNode<T>(null, val, _front);
 	    _front.setPrev(node);
 	    _front = node;
 	}
@@ -32,12 +33,13 @@ public class DLLDeque<T> implements Deque<T> {
     
     //add element to end of deque
     public void addLast(T val){
-	DLLNode node = new DLLNode<T>(null, val, null);
 	if (isEmpty()){
+	    DLLNode node = new DLLNode<T>(null, val, null);
 	    _front = node;
 	    _end = node;
 	}
 	else {
+	    DLLNode node = new DLLNode<T>(_end, val, null);
 	    _end.setNext(node);
 	    _end = node;
 	}
