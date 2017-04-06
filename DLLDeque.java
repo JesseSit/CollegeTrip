@@ -91,6 +91,7 @@ public class DLLDeque<T> implements Deque<T> {
 
     //removes the first occurrence of val and returns true if an element was remove
     public boolean removeFirstOccurrence(T val){
+	T firstVal = _front.getValue();
         DLLNode newNode = new DLLNode(null, _front.getValue(), null); //create newNode containing the value at _front
 	while(_front.getValue() != val){ //checks if the value at _front equals the remove value
 	    newNode.setNext(_front.getNext()); //copies next node of _front to newNode
@@ -113,12 +114,11 @@ public class DLLDeque<T> implements Deque<T> {
 	    _end = _end.getPrev();
 	    _end.setNext(null);
 	    if (isEmpty()){
-		_end = newNde;
+		_end = newNode;
 		return false;
 	    }
 	}
 	pollLast();
-	//node.setPrev(_end.getPrev());
 	_end.setNext(newNode);
 	return true;
     }
@@ -150,7 +150,7 @@ public class DLLDeque<T> implements Deque<T> {
 	Lafayette.addLast("Lisa");
 	Lafayette.addLast("Sit");
 	System.out.println(Lafayette);
-	System.out.println(Lafayette.removeLastOccurrence("Lisa"));
+	System.out.println(Lafayette.removeFirstOccurrence("Lisa"));
 	System.out.println(Lafayette);
 	System.out.println(Lafayette.peekFirst());	
 	System.out.println(Lafayette.pollLast());
