@@ -91,12 +91,12 @@ public class DLLDeque<T> implements Deque<T> {
 
     //removes the first occurrence of val and returns true if an element was remove
     public boolean removeFirstOccurrence(T val){
-        DLLNode newNode = new DLLNode(null, _front.getValue(), null);
-	while(_front.getValue() != val){
-	    newNode.setNext(_front.getNext());
-	    _front = _front.getNext();
-	    if (isEmpty()){
-		_front = newNode;
+        DLLNode newNode = new DLLNode(null, _front.getValue(), null); //create newNode containing the value at _front
+	while(_front.getValue() != val){ //checks if the value at _front equals the remove value
+	    newNode.setNext(_front.getNext()); //copies next node of _front to newNode
+	    _front = _front.getNext(); //changes the pointer _front to the next node
+	    if (isEmpty()){ //if _front becomes empty, then that means that the remove value is not in the deque
+		_front = newNode; //since every node of _front has been copied to newNode, you can set _front to newNode
 		return false;
 	    }
 	}
