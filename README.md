@@ -7,26 +7,41 @@
 ## Method Selections
   
   
-  ### addFirst()
+  ### addFirst(T element)
+  return: void
   addFirst() would be useful for the user to add to the front of the deque. (similar to the push() method)
   
-  ### addLast()
+  ### addLast(T element)
+  return: void
   addLast() would be useful for the user to add to the end of the deque. (similar to the add() method)
   
   ### pollFirst()
+  return: element (type T) removed 
   pollFirst() would be useful for the user to take out the element from the front of the deque. (similar to the remove() and removeFirst() method)
   
   ### pollLast()
+  return: element (type T) removed 
   pollLast() would be useful for the user to take out the element from the end of the deque. (similar to the pop() and removeLast() method)
   
   ### peekFirst()
+  return: element (type T) at the front of the link
   peekFirst() would be useful for the user to retrieve the element from the front of the deque. (similar to the peek() and getFirst() method)
   
   ### peekLast()
+  return: element (type T) at the end of link  
   peekLast() would be useful for the user to retrieve the element from the end of the deque. (similar to the peek() and getLast() method)
   
-  ### removeFirstOccurance()
+  ### removeFirstOccurance(T element)
+  return: boolean
   removeFirstOccurrance() would be useful for the user to remove the first occurrance of an element. returns true if the element was successfully removed, false otherwise.
   
-  ### removeLastOccurrance()
+  ### removeLastOccurrance(T element)
+  return: boolean
   removeLastOccurrance() would be useful for the user to remove the last occurrance of an element. returns true if the element was successfully removed, false otherwise.
+
+
+## Changes made
+
+- made inline comments and provided parameter Types to the methods mentioned in the readMe
+- improved robustness by linking the nodes both ways when adding a node by setting both previous and front node. so methods such as removeLastOccurance() and pollLast would appear to be working properly.
+- used better varaible names (i.e node ---> newNode)
