@@ -8,35 +8,35 @@
   
   
   ### addFirst(T element)
-  return: void
+  #### return: void
   addFirst() would be useful for the user to add to the front of the deque. (similar to the push() method)
   
   ### addLast(T element)
-  return: void
+  #### return: void
   addLast() would be useful for the user to add to the end of the deque. (similar to the add() method)
   
   ### pollFirst()
-  return: element (type T) removed 
+  #### return: element (type T) removed 
   pollFirst() would be useful for the user to take out the element from the front of the deque. (similar to the remove() and removeFirst() method)
   
   ### pollLast()
-  return: element (type T) removed 
+  #### return: element (type T) removed 
   pollLast() would be useful for the user to take out the element from the end of the deque. (similar to the pop() and removeLast() method)
   
   ### peekFirst()
-  return: element (type T) at the front of the link
+  ####return: element (type T) at the front of the link
   peekFirst() would be useful for the user to retrieve the element from the front of the deque. (similar to the peek() and getFirst() method)
   
   ### peekLast()
-  return: element (type T) at the end of link  
+  ####return: element (type T) at the end of link  
   peekLast() would be useful for the user to retrieve the element from the end of the deque. (similar to the peek() and getLast() method)
   
   ### removeFirstOccurance(T element)
-  return: boolean
+  ####return: boolean
   removeFirstOccurrance() would be useful for the user to remove the first occurrance of an element. returns true if the element was successfully removed, false otherwise.
   
   ### removeLastOccurrance(T element)
-  return: boolean
+  ####return: boolean
   removeLastOccurrance() would be useful for the user to remove the last occurrance of an element. returns true if the element was successfully removed, false otherwise.
 
 
