@@ -7,8 +7,8 @@ lab2 -- All Hands on Deque!
 */
 public class DLLDeque<T> implements Deque<T> {
 
-    private DLLNode<T> _front, _end;
-    private int _size;
+    private DLLNode<T> _front, _end; //create _front and _end DLLNode
+    private int _size; //keep track of size
 
     public DLLDeque(){
 	_front = _end = null;
@@ -18,15 +18,15 @@ public class DLLDeque<T> implements Deque<T> {
  
     //add element to front of deque
     public void addFirst(T val){
-	if (isEmpty()){
-	    DLLNode node = new DLLNode<T>(null, val, null);
-	    _front = node;
-	    _end = node;
+	if (isEmpty()){ //check is link is empty
+	    DLLNode newNode = new DLLNode<T>(null, val, null); //create a new DLLNode with cargo as val and setPrev as _front and setNext as _end
+	    _front = newNode;
+	    _end = newNode;
 	}
 	else{
-	    DLLNode node = new DLLNode<T>(null, val, _front);
-	    _front.setPrev(node);
-	    _front = node;
+	    DLLNode newNode = new DLLNode<T>(null, val, _front); //create a new DLLNode with cargo as val, setPrev as null and setNext as _front
+	    _front.setPrev(newNode); //
+	    _front = newNode;
 	}
 	_size++;
     }
@@ -34,27 +34,27 @@ public class DLLDeque<T> implements Deque<T> {
     //add element to end of deque
     public void addLast(T val){
 	if (isEmpty()){
-	    DLLNode node = new DLLNode<T>(null, val, null);
-	    _front = node;
-	    _end = node;
+	    DLLNode newNode = new DLLNode<T>(null, val, null); //same as addFirst(T val) if link is empty
+	    _front = newNode;
+	    _end = newNode;
 	}
 	else {
-	    DLLNode node = new DLLNode<T>(_end, val, null);
-	    _end.setNext(node);
-	    _end = node;
+	    DLLNode newNode = new DLLNode<T>(_end, val, null); //create a new DLLNode with cargo as val, setPrev as _end and setNext as null
+	    _end.setNext(newNode);
+	    _end = newNode;
 	}
 	_size++;
     }
 
     //removes and returns element at front of deque. Return null if deque is empty
     public T pollFirst(){
-	T retT;
-	if (isEmpty()){
+	T retT; //create a temp variable (type T) for return 
+	if (isEmpty()){ //check for emptiness
 	    return null;
 	}
 	else{
-	    retT = _front.getValue();
-	    _front = _front.getNext();
+	    retT = _front.getValue(); //store the first element of link
+	    _front = _front.getNext(); //make _front the getNext() of original _front
 	    _size--;
 	}
 	return retT;
@@ -62,13 +62,13 @@ public class DLLDeque<T> implements Deque<T> {
 
     //removes and returns element at end of deque. Return null if deque is empty
     public T pollLast(){
-	T retT;
-	if (isEmpty()){
+	T retT; //create a temp variable (type T) for return 
+	if (isEmpty()){ //check for emptiness
 	    return null;
 	}
 	else {
-	    retT = _end.getValue();
-	    _end = _end.getPrev();
+	    retT = _end.getValue(); //store the last element of link
+	    _end = _end.getPrev(); //make _end the getPrev() of original _end
 	    _end.setNext(null);
 	    _size--;
 	}
@@ -77,49 +77,49 @@ public class DLLDeque<T> implements Deque<T> {
 
     //returns element at front of deque. Returns null if deque is empty
     public T peekFirst(){
-	if (isEmpty())
+	if (isEmpty()) //check for emptiness
 	    return null;
-	return _front.getValue();
+	return _front.getValue(); //return element _front points
     } 
 
     //returns element at end of deque. Returns null if deque is empty
     public T peekLast(){
-	if (isEmpty())
+	if (isEmpty()) //check for emptiness
 	    return null;
-	return _end.getValue();
+	return _end.getValue(); //return element _end points
     }
 
     //removes the first occurrence of val and returns true if an element was remove
     public boolean removeFirstOccurrence(T val){
-        DLLNode node = new DLLNode(null, _front.getValue(), null);
+        DLLNode newNode = new DLLNode(null, _front.getValue(), null);
 	while(_front.getValue() != val){
-	    node.setNext(_front.getNext());
+	    newNode.setNext(_front.getNext());
 	    _front = _front.getNext();
 	    if (isEmpty()){
-		_front = node;
+		_front = newNode;
 		return false;
 	    }
 	}
-        node.setNext(_front.getNext());
-	_front = node;
+        newNode.setNext(_front.getNext());
+	_front = newNode;
 	return true;
     }
 
     //removes the last occurrence of val and returns true if an element was removed
     public boolean removeLastOccurrence(T val){
-	DLLNode node = new DLLNode(null, _end.getValue(), null);
+	DLLNode newNode = new DLLNode(null, _end.getValue(), null);
 	while(_end.getValue() != val){
-	    node.setPrev(_end.getPrev());
+	    newNode.setPrev(_end.getPrev());
 	    _end = _end.getPrev();
 	    _end.setNext(null);
 	    if (isEmpty()){
-		_end = node;
+		_end = newNde;
 		return false;
 	    }
 	}
 	pollLast();
 	//node.setPrev(_end.getPrev());
-	_end.setNext(node);
+	_end.setNext(newNode);
 	return true;
     }
 	    
