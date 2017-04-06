@@ -69,6 +69,7 @@ public class DLLDeque<T> implements Deque<T> {
 	else {
 	    retT = _end.getValue();
 	    _end = _end.getPrev();
+	    _end.setNext(null);
 	    _size--;
 	}
 	return retT;
@@ -110,13 +111,15 @@ public class DLLDeque<T> implements Deque<T> {
 	while(_end.getValue() != val){
 	    node.setPrev(_end.getPrev());
 	    _end = _end.getPrev();
+	    _end.setNext(null);
 	    if (isEmpty()){
 		_end = node;
 		return false;
 	    }
 	}
-	node.setPrev(_end.getPrev());
-	_end = node;
+	pollLast();
+	//node.setPrev(_end.getPrev());
+	_end.setNext(node);
 	return true;
     }
 	    
@@ -147,9 +150,10 @@ public class DLLDeque<T> implements Deque<T> {
 	Lafayette.addLast("Lisa");
 	Lafayette.addLast("Sit");
 	System.out.println(Lafayette);
-	System.out.println(Lafayette.removeFirstOccurrence("Sit"));
+	System.out.println(Lafayette.removeLastOccurrence("Lisa"));
+	System.out.println(Lafayette);
 	System.out.println(Lafayette.peekFirst());	
-	System.out.println(Lafayette.pollFirst());
+	System.out.println(Lafayette.pollLast());
 	System.out.println(Lafayette.pollFirst());
 	System.out.println(Lafayette);
 	
