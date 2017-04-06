@@ -91,7 +91,6 @@ public class DLLDeque<T> implements Deque<T> {
 
     //removes the first occurrence of val and returns true if an element was remove
     public boolean removeFirstOccurrence(T val){
-	T firstVal = _front.getValue();
         DLLNode newNode = new DLLNode(null, _front.getValue(), null); //create newNode containing the value at _front
 	while(_front.getValue() != val){ //checks if the value at _front equals the remove value
 	    newNode.setNext(_front.getNext()); //copies next node of _front to newNode
@@ -108,15 +107,13 @@ public class DLLDeque<T> implements Deque<T> {
 
     //removes the last occurrence of val and returns true if an element was removed
     public boolean removeLastOccurrence(T val){
-	DLLNode newNode = new DLLNode(null, _end.getValue(), null);
-	while(_end.getValue() != val){
-	    newNode.setPrev(_end.getPrev());
-	    _end = _end.getPrev();
-	    _end.setNext(null);
-	    if (isEmpty()){
-		_end = newNode;
-		return false;
-	    }
+	DLLNode newNode = new DLLNode(null, _end.getValue(), null); //create newNode containing the value at _end
+	while(_end.getValue() != val){ //chekcs if the value at _end equals the remove value
+	    newNode.setPrev(_end.getPrev()); //copies next node of _end to newNode
+	    _end = _end.getPrev(); //changes the pointer _end to previous node
+	    _end.setNext(null); 
+	    if (isEmpty()){ //if _end becomes empty, then that means the remove value is not in the deque		
+		_end = newNode; //since every node of end has been copied to newNode, you can set _front to newNode
 	}
 	pollLast();
 	_end.setNext(newNode);
