@@ -112,7 +112,7 @@ public class DLLDeque<T> implements Deque<T> {
 	    newNode.setPrev(_end.getPrev()); //copies next node of _end to newNode
 	    _end = _end.getPrev(); //changes the pointer _end to previous node
 	    _end.setNext(null); 
-	    if (isEmpty()){ //if _end becomes empty, then that means the remove value is not in the deque		
+	    if (isEmpty()) //if _end becomes empty, then that means the remove value is not in the deque		
 		_end = newNode; //since every node of end has been copied to newNode, you can set _front to newNode
 	}
 	pollLast();
