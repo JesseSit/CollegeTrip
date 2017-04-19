@@ -45,3 +45,4 @@
 - made inline comments and provided parameter Types to the methods mentioned in the readMe
 - improved robustness by linking the nodes both ways when adding a node by setting both previous and front node. so methods such as removeLastOccurance() and pollLast would appear to be working properly.
 - used better varaible names (i.e node ---> newNode)
+- Syntax was fixed using the second DequeTester2
